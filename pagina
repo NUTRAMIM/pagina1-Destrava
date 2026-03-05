@@ -1,0 +1,14 @@
+git init
+git add .
+git commit -m "landing page destrava"
+git remote add origin https://github.com/SEU-USUARIO/destrava-landing.git
+git push -u origin main
+```
+
+**Passo 3 — Conecte na Vercel.** Acesse [vercel.com/new](https://vercel.com/new), importe o repositório `destrava-landing` do GitHub e clique em Deploy. A Vercel detecta o Vite automaticamente.
+
+**Passo 4 — Configure o subdomínio.** Essa é a parte principal. Depois do deploy, na Vercel vá em **Settings → Domains** do projeto da landing page e adicione `pagina.destravaedu.com.br`. A Vercel vai te pedir para criar um registro DNS. Vá no painel onde você gerencia o domínio `destravaedu.com.br` (Registro.br, Cloudflare, ou onde estiver) e adicione:
+```
+Tipo: CNAME
+Nome: pagina
+Valor: cname.vercel-dns.com
